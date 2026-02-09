@@ -1,3 +1,4 @@
 .py-clean
 __pycache__/
 data/
+.env

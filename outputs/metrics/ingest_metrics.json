@@ -1,0 +1,7 @@
+{
+  "dataset": "nyc_taxi",
+  "rows_read": 9384487,
+  "rows_written": 9384487,
+  "columns": 6,
+  "ingestion_ts": "2026-02-09T20:04:08.327344"
+}
