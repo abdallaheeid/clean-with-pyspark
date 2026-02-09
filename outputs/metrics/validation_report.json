@@ -1,0 +1,23 @@
+{
+  "dataset": "nyc_taxi",
+  "rows": 9384487,
+  "null_counts": {
+    "tpep_pickup_datetime": 0,
+    "tpep_dropoff_datetime": 0,
+    "passenger_count": 236179,
+    "fare_amount": 0,
+    "ingestion_ts": 0,
+    "source_file": 0
+  },
+  "numeric_stats": {
+    "fare_amount": {
+      "min": -959.9,
+      "max": 2203.1
+    }
+  },
+  "duplicate_groups": 1034,
+  "invalid_values": {
+    "negative_fares": 79490
+  },
+  "validation_timestamp": "2026-02-09T21:48:00.830516"
+}
