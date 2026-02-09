@@ -1,0 +1,6 @@
+rules:
+  fare_amount:
+    min: 0
+    max: TBD
+  pickup_ts:
+    nullable: false

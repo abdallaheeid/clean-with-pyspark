@@ -1,0 +1,15 @@
+dataset: nyc_taxi
+level: raw
+columns:
+  - name: tpep_pickup_datetime
+    type: timestamp
+    nullable: true
+  - name: tpep_dropoff_datetime
+    type: timestamp
+    nullable: true
+  - name: passenger_count
+    type: integer
+    nullable: true
+  - name: fare_amount
+    type: double
+    nullable: true

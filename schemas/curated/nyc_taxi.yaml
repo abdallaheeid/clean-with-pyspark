@@ -1,0 +1,15 @@
+dataset: nyc_taxi
+level: curated
+columns:
+  - name: pickup_ts
+    type: timestamp
+    nullable: false
+  - name: dropoff_ts
+    type: timestamp
+    nullable: false
+  - name: passenger_count
+    type: integer
+    nullable: false
+  - name: fare_amount
+    type: double
+    nullable: false
