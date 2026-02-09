@@ -1,9 +1,6 @@
 from pyspark.sql import functions as F
 from jobs.spark_session import get_spark
 from pyspark.sql.types import TimestampType, LongType, DoubleType
-from pathlib import Path
-import json
-from datetime import datetime
 from dotenv import load_dotenv
 import os
 
@@ -38,6 +35,13 @@ def main():
     )
     
     df_clean = df.filter(is_valid)
+    
+    df_clean = (
+        df_clean
+        .withColumn("pickup_year", F.year("tpep_pickup_datetime"))
+        .withColumn("pickup_month", F.month("tpep_pickup_datetime"))
+    )
+    
     df_reject = df.filter(~is_valid)
     
     # deduplicate clean data
@@ -49,7 +53,7 @@ def main():
     ])
     
     # write clean and reject data
-    df_clean.write.mode("overwrite").parquet(CLEAN_PATH)  # type: ignore
+    df_clean.write.mode("overwrite").partitionBy("pickup_year", "pickup_month").parquet(CLEAN_PATH)  # type: ignore
     df_reject.write.mode("overwrite").parquet(REJECT_PATH)  # type: ignore
     
     spark.stop()
